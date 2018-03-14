@@ -44,6 +44,7 @@
             </li>
           </div>
           `)
+          $('li').last().hide().slideDown()
       }
       
       // When new button is clicked
@@ -75,7 +76,9 @@
     $list.on('click', '.delete', function() {
       var todoId = $(this).parent().attr('id')
       httpClient({method: 'delete', url: `/api/todos/${todoId}`}).then((serverResponse) => {
-        $("#" + todoId).remove()
+        $("#" + todoId).slideUp(500, function() {
+          $(this).remove()
+        })
       })
     })
 
