@@ -58,3 +58,7 @@ html, body {
 .row {
     margin-bottom: 10px;
 }
+
+li.completed span {
+    text-decoration: line-through;
+}
